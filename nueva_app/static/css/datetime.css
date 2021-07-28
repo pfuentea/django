@@ -1,0 +1,43 @@
+
+
+body{
+    background-image: url("https://www.salvador-dali.org/media/upload/cataleg_pintura/MITJA/0265.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.reloj .cuerpo {
+    display: flex;
+    align-items: center;
+  }
+
+  
+.reloj .cuerpo .disco {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #edf1fc;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+  }
+  .reloj .cuerpo .disco .dia {
+    color: #4e73e5;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  
+  .reloj .cuerpo .disco .mes {
+    color: #4e73e5;
+    line-height: 1;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+  .reloj .cuerpo .hora {
+    color: #4e73e5;
+    line-height: 1;
+    font-size: 2rem;
+    text-transform: uppercase;
+  }

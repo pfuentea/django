@@ -1,0 +1,56 @@
+.gallery{
+    width:300px;
+    height:300px;
+    border-radius:160px;
+    border:10px solid #666;
+}
+body{
+    background-image: url("https://arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/67GSCI4WA5HMDOP72DIWSKG2JY.jpg");
+    background-repeat: no-repeat;
+    
+}
+.f1_container {
+position: relative;
+margin:10px;
+width: 300px;
+height: 300px;
+z-index : 1;
+float:left;
+
+}
+.f1_container {
+-webkit-perspective: 1000;
+perspective: 1000;
+
+}
+.f1_card {
+width: 100%;
+height: 100%;
+-webkit-transform-style: preserve-3d;
+-webkit-transition: all 1.0s linear;
+transform-style: preserve-3d;
+transition: all 1.0s linear;
+
+}
+.f1_container:active .f1_card {
+-webkit-transform: rotateY(180deg);
+transform: rotateY(180deg);
+box-shadow: -5px 5px 5px #aaa;
+}
+.face {
+position: absolute;
+width: 100%;
+height: 100%;
+backface-visibility: hidden;
+-webkit-backface-visibility: hidden;
+}
+.face.back {
+display: block;
+-webkit-transform: rotateY(180deg);
+transform: rotateY(180deg);
+box-sizing: border-box;
+color: white;
+text-align: center;
+background-color: #aaa;
+border-radius:160px;
+}

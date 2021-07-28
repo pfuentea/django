@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <style>
+        .gallery{
+            width:300px;
+            height:300px;
+            border-radius:160px;
+            border:10px solid #666;
+        }
+        body{
+            background-image: url("https://arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/67GSCI4WA5HMDOP72DIWSKG2JY.jpg");
+            background-repeat: no-repeat;
+            
+        }
+        .f1_container {
+    position: relative;
+    margin:10px;
+    width: 300px;
+    height: 300px;
+    z-index : 1;
+    float:left;
+
+}
+.f1_container {
+    -webkit-perspective: 1000;
+    perspective: 1000;
+    
+}
+.f1_card {
+    width: 100%;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: all 1.0s linear;
+    transform-style: preserve-3d;
+    transition: all 1.0s linear;
+    
+}
+.f1_container:active .f1_card {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    box-shadow: -5px 5px 5px #aaa;
+}
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.face.back {
+    display: block;
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+    background-color: #aaa;
+    border-radius:160px;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Star Wars - The Mandalorian</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="grogu">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="grogu">Grogu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dindjarin">Din Djarin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="content">
+
+        {% for img in imgs %}  
+        <div class="f1_container">
+            <div class="shadow f1_card">
+                <div class="front face">
+                    <img src="{{img}}" class="gallery">
+                </div>
+            <div class="back face center">Some text inside here</div>
+        </div>
+    </div>
+        {% endfor %}
+    </div>
+    <script>
+        $('.fotos').on('click',function(){
+            $(this).toggleClass('active');
+        });
+    </script>
+</body>
+</html>
