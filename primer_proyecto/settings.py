@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'nueva_app'
+    'nueva_app',
+    'form_test',
+    'random_words',
+    'ninja_gold'
 ]
 
 MIDDLEWARE = [

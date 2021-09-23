@@ -15,5 +15,5 @@ urlpatterns = [
     path('home/<str:p_name>', views.home2),
     path('grogu', views.grogu),
     path('dindjarin',views.mandalorian),
-    path('time_display',views.time_display)
+    path('time_display',views.time_display),
     ]
